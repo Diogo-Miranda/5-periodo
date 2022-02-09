@@ -1,7 +1,11 @@
 package utils;
 
+import monitoring.Benchmark;
+
 public class SortUtils {
     public static void swap(int[] array, int i, int j) {
+        Benchmark.addOperation(3);
+        
         int aux = array[i];
         array[i] = array[j];
         array[j] = aux;
