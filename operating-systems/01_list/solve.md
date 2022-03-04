@@ -70,7 +70,7 @@ Acontece quando temos múltiplos quantum por ciclos para esse processo. Isto pod
 
 8. Medida de um certo sistema mostraram que um processo roda, em média,  por um período T  antes de ser bloqueado em uma operação de I/O. Considere que a troca de contexto consuma um tempo S (overhead). Qual é a fórmula que descreve a eficiência da CPU,  para um escalonamento round-robin com quantum Q, supondo: 
 
-![Permissões](/doc/roudin_robin.png "Permissões").
+![Roudin-Robin](../01_list/doc/roudin_robin.png "Roudin-Robin").
 
 - Q = infinito
 
