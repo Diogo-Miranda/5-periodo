@@ -35,7 +35,7 @@ Geralmente um processo tem 3 estados:
 2. Pronto (executável, temporariamente parado para deixar outro processo ser executado)
 3. Bloqueado (incapaz de ser executado até que algum evento externo aconteça). 
 
-![Estado dos processos](/doc/state_process.PNG "Estados dos processos").
+![Estado dos processos](../01_list/doc/state_process.PNG "Estados dos processos").
 
 Geralmente quem gerencia esses processos é uma camada "oculta" que cuida de todo o tratamento de interrupções e detalhes sobre o início e parada de processos, essa camada é chamada de **escalonador**.
 
@@ -43,7 +43,7 @@ Geralmente quem gerencia esses processos é uma camada "oculta" que cuida de tod
 
 Compartilhamento de recursos requer que o S. O. garanta que um programa não prejudique a execução dos demais. 
 
-![Modo supervisor e usuário](/doc/modo_monitor_usuario.PNG "Modo supervisor e usuário").
+![Modo supervisor e usuário](../01_list/doc/modo_monitor_usuario.PNG "Modo supervisor e usuário").
 
 Um bit acrescentado ao hardware permite diferenciar dois modos de operação:
 
@@ -64,4 +64,4 @@ Uma distinção importante entre o sistema operacional e o software normal (modo
 ---
 ### Permissões
 
-![Permissões](/doc/permissoes.png "Permissões").
+![Permissões](../01_list/doc/permissoes.png "Permissões").
