@@ -1,5 +1,9 @@
 # Lista 01 de Sistemas Operacionais
+## Bernardo Ferreira Temponi
+## Danniel Henrique Correa Vieira
+## Diego Basílio Arruda
 ## Diogo Araujo Miranda
+## Matheus Lage da Costa
 ### Ciência da Computação - PUC Minas
 
 ---
@@ -60,6 +64,8 @@ Funcionaria da seguinte maneira:
 
 5. Em um sistema com threads, existe uma pilha para cada thread ou uma pilha por processo? Justifique sua resposta. 
 
+Existe uma pilha para cada thread. Um thread será executada como um "subprocesso" e terá informações atreladas a ela, e poderá gerar novas threads.
+
 6. O CDC 6600 podia trabalhar com até 10 processos usando uma forma especial de escalonamento round-robin denominada compartilhamento de processador. Um chaveamento ocorria após cada  execução de uma instrução. A 1ª instrução do processo p1, a 1ª instrução do processo p2 e assim sucessivamente. Suponha overhead próximo de zero. Se um processo necessita de T segundos para completar sua operação (sem concorrência),  quanto tempo gastará se o processador for compartilhado com n processos? 
 
 Iriam necessitar de n*T segundos
@@ -104,3 +110,110 @@ lim q -> 0 (Q/Q+S) = 0
 
 9. Cinco tarefas são disparadas ao mesmo tempo. Seus tempos estimados de execução são de 10, 6, 2, 4 e 8 minutos. Considere que suas prioridades são 3, 5, 2, 1, e 4, respectivamente (1 a maior prioridade). Para cada um dos algoritmos abaixo, determine o turnaround médio. Ignore o tempo gasto na troca de contexto. 
 
+- Round-Robin
+
+**Tempo de Espera**
+P1=0+(3+2+3+3)+(3+1+3)+(2)=20 
+P2=3+(2+3+3)=11
+P3=6
+P4=8+(3+3+3)=17
+P5=11+(3+3+1)+(3)=21
+
+Tmedio = 15
+
+**Tempo de Resposta**
+
+P1=0
+P2=3
+P3=6
+P4=8
+P5=11
+
+Tmedio = 5.6
+
+**Tempo de Retorno**
+
+P1=1+2+3+3+1+3+3+3+3+2+3+3=30
+P2=3+3+3+3+2+3+3=20
+P3=2+3+3=8
+P4=1+3+3+3+3+2+3+3=21
+P5=2+3+3+1+3+3+3+3+2+3+3=29
+
+Tmedio = 21.6
+
+- Escalonamento por prioridade
+
+**Tempo de Espera**
+P1=14
+P2=24
+P3=4
+P4=0
+P5=6
+
+Tmedio = 9.6
+
+**Tempo de Resposta**
+
+P1=14
+P2=24
+P3=4
+P4=0
+P5=6
+
+Tmedio = 9.6
+
+**Tempo de Retorno**
+
+P1=24-14=10
+P2=30-24=6
+P3=6-4=2
+P4=4-0=4
+P5=14-6=8
+
+Tmedio = 6
+
+- FCFS (10,6,2,4,8) 
+
+**Tempo de Espera**
+P1=0
+P2=10
+P3=16
+P4=18
+P5=22
+
+Tmedio = 13.2
+
+**Tempo de Resposta**
+
+P1=0
+P2=10
+P3=16
+P4=18
+P5=22
+
+Tmedio = 13.2
+
+**Tempo de Retorno**
+
+P1=10
+P2=6
+P3=2
+P4=4
+P5=8
+
+Tmedio = 6
+
+- SJF
+
+Tr = 25
+
+1.  Um sistema de tempo real tem 4 eventos com períodos de 50, 100, 200, 250 msegs cada. Considere que cada evento demande 35, 20, 10 e x msegs de CPU respectivamente. Qual o maior valor de x para que o sistema continue escalonável?  
+
+35/50 = 0.7
+20/100 = 0.2
+10/200 = 0.05
+x/250 = ?
+
+0.7 + 0.2 + 0.05 + x/250 < 1
+x/250 < 1 - 0.95
+x <= 0.05 * 250 = 12.5
